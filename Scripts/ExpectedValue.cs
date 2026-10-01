@@ -12,7 +12,12 @@ public class ExpectedValue : MonoBehaviour
 
     void Start()
     {
-        float probabilidad = (4 / 10) * 100;
+
+    }
+
+    public void CalcularProbabilidades()
+    {
+        float probabilidad = 4f / 10f;
         probabilidad = (float)System.Math.Round(probabilidad, 2);
 
         float esperanza_As = probabilidad * v_As;
@@ -45,14 +50,23 @@ public class ExpectedValue : MonoBehaviour
         float esperanza_Dos = probabilidad * v_Dos;
         esperanza_Dos = (float)System.Math.Round(esperanza_Dos, 2);
 
-        Debug.Log("La probabilidad de que salga cualquier carta es de " + probabilidad + "%");
-        Debug.Log("La esperanza de cada carta es la siguiente:\n As: " + esperanza_As + "%\nTres: " + esperanza_Tres + "%\nRey: " + esperanza_Rey + "%\nCaballo: " +
-            esperanza_Caballo + "%\nSota: " + esperanza_Sota + "%\nSiete: " + esperanza_Siete + "%\nSeis: " + esperanza_Seis + "%\nCinco: " + esperanza_Cinco + "%\nCuatro: " +
-            esperanza_Cuatro + "%\nDos: " + esperanza_Dos);
+        Debug.Log("La probabilidad de que salga cualquier carta es de " + probabilidad * 100f + "%");
+        Debug.Log("La esperanza de cada carta es la siguiente:\n As: " + esperanza_As + "\nTres: " + esperanza_Tres + "\nRey: " + esperanza_Rey + "\nCaballo: " +
+            esperanza_Caballo + "\nSota: " + esperanza_Sota + "\nSiete: " + esperanza_Siete + "\nSeis: " + esperanza_Seis + "\nCinco: " + esperanza_Cinco + "\nCuatro: " +
+            esperanza_Cuatro + "\nDos: " + esperanza_Dos);
     }
 
-    public void CalcularProbabilidades()
+    public void Restart()
     {
-
+        n_As = 4;
+        n_Tres = 4;
+        n_Rey = 4;
+        n_Caballo = 4;
+        n_Sota = 4;
+        n_Siete = 4;
+        n_Seis = 4;
+        n_Cinco = 4;
+        n_Cuatro = 4;
+        n_Dos = 4;
     }
 }
